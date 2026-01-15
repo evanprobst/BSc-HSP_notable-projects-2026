@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+eprobst2
+251368388
+03/15/24
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="CONTACTS">
+        <xsd:complexType>
+            <xsd:sequence>
+                
+                <xsd:element name="PRODUCT" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            
+                            <xsd:element name="ProductID" type="xsd:string"/>
+                            <xsd:element name="ProductName" type="xsd:string"/>
+                            
+                            <xsd:element name="CONTACT" minOccurs="0" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        
+                                        <xsd:element name="ContactID" type="xsd:string"/>
+                                        <xsd:element name="ContactType" type="xsd:string"/>
+                                        <xsd:element name="ContactDate" type="xsd:date"/>
+                                        <xsd:element name="ProductID" type="xsd:string"/>
+                                        <xsd:element name="EmployeeID" type="xsd:integer"/>
+                                        <xsd:element name="CompanyID" type="xsd:string"/>
+                                        
+                                        <xsd:element name="TICKET" maxOccurs="5">   
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    
+                                                    <xsd:element name="TicketID" type="xsd:integer"/>
+                                                    <xsd:element name="ContactID" type="xsd:string"/>
+                                                    <xsd:element name="ProductID" type="xsd:string"/>
+                                                    <xsd:element name="DateOpened" type="xsd:date"/>
+                                                    <xsd:element name="DateClosed" type="xsd:date" minOccurs="0"/>
+                                                    <xsd:element name="Notes" type="xsd:string"/>
+                                                    
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        
+                                    </xsd:sequence>
+                                    <xsd:attribute name="uploaded" type="xsd:boolean" use="required"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
